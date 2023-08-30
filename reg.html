@@ -1,0 +1,124 @@
+<head>
+  <style>
+    body {
+      background-image: url('reg.png');
+      background-size: 80%;
+    }
+
+    div {
+      display: flex-inline;
+      text-align: center;
+    }
+
+    button {
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      background-color:rgb(230, 149, 43);
+      color: white;
+      padding: 15px;
+      border-style: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow: 1px 1px 7px rgb(72, 72, 72);
+      transition: all 0.2s;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color:rgb(255, 145, 0);
+      font-size: 19px;
+    }
+
+    button:active {
+      /* padding: 12px; */
+      font-size: 15px;
+      box-shadow: 0px 0px 5px rgb(72, 72, 72);
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(255, 145, 0);
+      font-weight: bold;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      font-size: 17px;
+    }
+
+    a:active {
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: rgb(255, 145, 0);
+    }
+  </style>
+  <script>
+    function matchPassword() {
+      var pw1 = document.getElementById("psw").value;
+      var pw2 = document.getElementById("psw-repeat").value;
+      if (pw1 != pw2) {
+        alert("Passwords did not match");
+      } else {
+        alert("Password created successfully");
+      }
+    }
+    function matphone() {
+      var ph = document.getElementById("mobile").value;
+      var val = "^[6-9][0-9]{9}";
+      if (ph.match(val)) {
+        alert("yes");
+      }
+      else {
+        alert("enter valid phone number");
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <form>
+    <!-- <center> -->
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+
+      <label for="email"><b>User Name</b></label>
+      <input type="text" placeholder="Enter User Name" name="name" id="name" required><br><br>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required><br><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br><br>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required><br><br>
+
+      <label for="mobile"><b>Mobile Number</b></label>
+      <input type="tel" placeholder="phone number" name="mobile" required><br><br>
+
+      <label for="dob"><b>Date of Birth</b></label>
+      <input type="date" placeholder="Date of Birth" name="dob" required><br><br>
+
+      <label for="gender"><b>Gender</b></label>
+      <input type="radio" placeholder="Date of Birth" name="gen" id="male">
+      <label for="male"><b>Male</b></label>
+      <input type="radio" placeholder="Date of Birth" name="gen" id="female">
+      <label for="female"><b>Female</b></label><br><br>
+      <button type="submit" class="registerbtn" onclick="matchPassword(); matphone();">Register</button>
+    </div>
+    <!-- </center> -->
+
+    <!-- <center> -->
+    <div class="container signin">
+      <br><p style="background-color: antiquewhite; display: inline; padding: 10px; border-radius: 5px; font-weight: bold;">Already have an account? <a href="#"> click here to Sign in</a>.</p>
+    </div>
+    <!-- </center> -->
+  </form>
+</body>

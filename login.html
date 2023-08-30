@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Login Page </title>
+    <style>
+        body {
+            background-image: url('loginpage.png');
+            background-size: 100%;
+            /* background-repeat: no-repeat; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        input {
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+
+        input ::placeholder {
+            color: darkgray;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: rgb(43, 113, 243);
+            color: white;
+            padding: 15px;
+            border-style: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 1px 1px 7px rgb(72, 72, 72);
+            transition: all 0.2s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(19, 99, 247);
+            font-size: 19px;
+        }
+
+        button:active {
+            /* padding: 12px; */
+            font-size: 15px;
+            box-shadow: 2px 2px 10px rgb(72, 72, 72);
+        }
+
+        a {
+           text-decoration: none;
+           color: antiquewhite;
+           font-weight: bold;
+           font-size: 15px;
+           transition: all 0.2s;           
+        }
+
+        a:hover {
+            font-size: 17px;
+        }
+
+        a:active {
+            font-size: 15px;
+        }
+
+    </style>
+    <script>
+        function main(input1, inputtxt) {
+            var user = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+            var passw = /^[A-Za-z]\w{7,14}$/;
+            if ((inputtxt.value.match(passw)) && (input1.value.match(user))) {
+                alert('Correct')
+                return true;
+            }
+            else {
+                alert('Enter the fields correctly')
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1> Online Book Store login form </h1>
+    </center>
+    <form name="form1" action="#">
+        <div class="container">
+            <center> <label>Username : </label>
+                <input type="text" placeholder="Enter Username" name="username" id="name" required> <br> <br><br>
+                <label>Password : </label>
+                <input type="password" placeholder="Enter Password" name="password" id="pswd" required> <br><br>
+                <!-- <p id = "message" style="color:red"> <p> <br> -->
+                <h5>[Enter password in 7 to 15 characters which contain only characters,<br> numeric digits, underscore
+                    and first character must be a letter]</h5>
+                <button type="submit" onclick="main(document.form1.username,document.form1.password)">Login</button>
+                <button type="button" class="cancelbtn"> Cancel</button>
+                <h5><a href="#">Forgot password? </a> </h5>
+            </center>
+        </div>
+    </form>
+</body>
+
+</html>
